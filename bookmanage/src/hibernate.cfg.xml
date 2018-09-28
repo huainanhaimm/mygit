@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- 数据源：定义连接数据库的信息 -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/book_manage?useUnicode=true&amp;characterEncoding=UTF-8</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password"></property>
+
+		<!-- 定义了sql的方言：告诉hibernate使用的是什么样的数据库，sql应该是什么标准 -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- 定义显示sql语句 -->
+		<property name="show_sql">true</property>
+		<!-- 格式化sql -->
+		<property name="format_sql">true</property>
+		<!-- 表的生成策略，或者方式 -->
+		<property name="hbm2ddl.auto">update</property>
+
+
+		<!-- 加载映射文件 -->
+		<mapping class="com.bookmanage.bean.UserBean" />
+		<mapping class="com.bookmanage.bean.BookBean" />
+
+	</session-factory>
+</hibernate-configuration>
