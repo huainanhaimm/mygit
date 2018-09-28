@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniuxy.comment.dao.ICommentDAO">
+
+	<insert id="insertComment" parameterType="CommentBean">
+		 insert into t_comment(uid,content,gid)values(#{uid},#{content},#{gid})
+	<!-- insert into t_comment(content)values(#{content}); -->
+	</insert>
+
+
+
+</mapper>

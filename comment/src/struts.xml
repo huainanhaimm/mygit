@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- 开发者模式打开，即启动热加载 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 流上传文件的限制 -->
+	<constant name="struts.multipart.maxSize" value="20971520" />
+
+
+	<!-- 用户登录 -->
+	<package name="base" namespace="/login" extends="struts-default ">
+		<action name="login" class="com.woniuxy.comment.action.LoginAction"
+			method="execute">
+			<result name="success">/jsp/showGoods.jsp</result>
+			<result name="fail">/login.jsp</result>
+			<!-- input:代表验证失败，自动跳转回登录页面 -->
+			<result name="input">/login.jsp</result>
+		</action>
+	</package>
+
+	<!-- 用户注册 -->
+	<package name="base2" namespace="/register" extends="struts-default ">
+		<action name="register" class="com.woniuxy.comment.action.RegisterAction"
+			method="execute">
+			<!-- 注册成功，跳转到登录页面 -->
+			<result name="success"></result>
+			<result name="fail">/register.jsp</result>
+			<!-- 注册失败，提示失败原因 -->
+			<!-- input:代表验证失败，自动跳转回登录页面 -->
+			<result name="input">/register.jsp</result>
+		</action>
+	</package>
+
+	<package name="base3" namespace="/showGoods" extends="json-default">
+		<action name="showGoods" class="com.woniuxy.comment.action.ShowGoodsAction"
+			method="execute">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+		<action name="addGoods" class="com.woniuxy.comment.action.AddGoodsAction"
+			method="execute">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result name="input">/jsp/AddGoods.jsp</result>
+		</action>
+
+		<action name="goodsDatails" class="com.woniuxy.comment.action.GoodsDatailsAction"
+			method="execute">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- 添加评论 -->
+	<package name="base4" namespace="/comment" extends="json-default">
+		<action name="addComment" class="com.woniuxy.comment.action.CommentAction"
+			method="execute">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+
+		</action>
+	</package>
+
+</struts>

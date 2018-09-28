@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.woniuxy.comment.dao.IGoodsDAO">
+	<select id="findAll" parameterType="int" resultMap="map">
+		select * from
+		t_goods left join t_kind on t_goods.kid=t_kind.kid left join
+		comment_tol
+		on t_goods.gid= comment_tol.gid
+		limit #{num},6;
+	</select>
+	<resultMap type="GoodsBean" id="map">
+		<id property="gid" column="gid"></id>
+		<result property="gname" column="gname"></result>
+		<result property="price" column="price"></result>
+		<result property="num" column="num"></result>
+		<association property="kb" javaType="KindBean">
+			<id property="kid" column="kid"></id>
+			<result property="kname" column="kname"></result>
+		</association>
+	</resultMap>
+
+	<!-- 查找goods表一共有多少条数据 -->
+	<select id="findtolPag" resultType="int">
+		select count(gid) as tol from
+		t_goods;
+	</select>
+
+	<select id="findById" parameterType="int" resultMap="map2">
+		select *
+		from t_kind LEFT JOIN t_goods on t_goods.kid=t_kind.kid LEFT JOIN
+		t_comment on t_goods.gid= t_comment.gid where
+		t_goods.gid=#{gid};
+	</select>
+
+	<resultMap type="GoodsBean" id="map2">
+		<id property="gid" column="gid"></id>
+		<result property="gname" column="gname"></result>
+		<result property="price" column="price"></result>
+		<result property="photo" column="photo"></result>
+		<association property="kb" javaType="KindBean">
+			<id property="kid" column="kid"></id>
+			<result property="kname" column="kname"></result>
+		</association>
+
+		<collection property="cblist" ofType="CommentBean">
+			<id property="com_id" column="com_id"></id>
+			<result property="content" column="content"></result>
+			<result property="com_time" column="com_time"></result>
+			<result property="uid" column="uid"></result>
+		</collection>
+	</resultMap>
+
+
+	<!-- 向商品表插入商品信息 -->
+	<insert id="addGoods" parameterType="GoodsBean">
+		insert into
+		t_goods
+		(gname,price,kid,photo)
+		values(#{gname},#{price},#{kid},#{photo});
+	</insert>
+
+
+</mapper>

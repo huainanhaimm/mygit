@@ -1,0 +1,88 @@
+/* div {
+	border: 1px red solid;
+} */
+
+.outer {
+	margin: 0 auto;
+	width: 800px;
+	height: 500px;
+	border: 3px black solid;
+}
+
+.top {
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+
+.center {
+	width: 600px;
+	height: 410px;
+	margin: 0 auto;
+}
+
+table {
+	border: 1px black solid;
+	width: 600px;
+	height: 410px;
+}
+
+th,td {
+	border: 1px black solid;
+	width: 150px;
+	height: 40px;
+	text-align: center
+}	
+
+
+
+.buttom {
+	width: auto;
+	height: 45px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.buttom div{
+	width:131px;
+	height:45px;
+	float:left;
+	line-height:45px;
+	text-align: center;
+	
+}
+
+
+
+.hidden0{
+	width:595px;
+	height:44px;
+	margin-top:-346px;
+}
+.hidden1{
+	width:595px;
+	height:44px;
+	margin-top:-289px;
+}
+.hidden2{
+	width:595px;
+	height:44px;
+	margin-top:-229px;
+}
+.hidden3{
+	width:595px;
+	height:44px;
+	margin-top:-170px;
+}
+.hidden4{
+	width:595px;
+	height:44px;
+	margin-top:-112px;
+}
+.hidden5{
+	width:595px;
+	height:44px;
+	margin-top:-54px;
+}
+

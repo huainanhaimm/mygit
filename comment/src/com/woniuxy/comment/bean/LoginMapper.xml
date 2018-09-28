@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper  namespace="com.woniuxy.comment.dao.ILoginDAO">
+    	<select id="findByNameAndPass"  parameterType="LoginBean"  resultMap="map">
+    	select * from t_login where uname=#{uname} and pass=#{pass};
+    	</select>
+    	
+    	<resultMap type="LoginBean" id="map" >
+    		<id property="uid"  column="uid"></id>
+    		<result property="uname" column="uname"></result>
+    		<result property="pass" column="pass"></result>
+    		
+    	</resultMap>
+    	
+    	
+    	<select id="findByName"  parameterType="string"  resultMap="map2">
+    		select * from t_login where uname=#{uname};
+    	</select>
+    	
+    	<resultMap type="LoginBean" id="map2" >
+    		<id property="uid"  column="uid"></id>
+    		<result property="uname" column="uname"></result>
+    		<result property="pass" column="pass"></result>
+    		
+    	</resultMap>
+    		
+    	<!--插入注册信息    进行注册操作  -->
+    	<insert id="insertAll" parameterType="LoginBean" >
+    		insert into t_login(uname,pass) values(#{uname},#{pass});
+    	</insert>	
+    	
+    </mapper>

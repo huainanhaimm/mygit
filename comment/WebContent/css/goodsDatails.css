@@ -1,0 +1,165 @@
+div {
+	
+}
+
+.main {
+	border: 1px solid black;
+	width: 800px;
+	height: 800px;
+	margin: 0 auto;
+}
+
+.GoodsDatails {
+	width: 800px;
+	height: 200px;
+}
+
+.img {
+	border: 1px solid black;
+	width: 130px;
+	height: 150px;
+	float: left;
+	margin-top: 22px;
+	margin-left: 99px;
+}
+#photo{
+	width:130px;
+	height:150px;
+}
+
+.describe {
+	width: 300px;
+	height: 150px;
+	float: left;
+	margin-top: 22px;
+	margin-left: 60px;
+}
+
+.messge {
+	width: 300px;
+	height: 49px;
+	line-height: 49px;
+}
+
+.comment {
+	width: 800px;
+	height: 300px;
+}
+
+.comment-main {	
+	width: 800px;
+	height: 270px;
+}
+
+.comment-button {
+	width: 800px;
+	height: 30px;
+}
+
+table {
+	border: 1px solid black;
+	height: 270px;
+}
+
+th, td {
+	border: 1px solid black;
+	width: 266px;
+	height: 20px;
+	text-align: center;
+}
+
+.td1 {
+	border: 1px solid black;
+	width: 150px;
+	height: 20px;
+	text-align: center;
+}
+
+.td2 {
+	border: 1px solid black;
+	width: 200px;
+	height: 20px;
+	text-align: center;
+}
+
+.td3 {
+	border: 1px solid black;
+	width: 437px;
+	height: 20px;
+	text-align: center;
+}
+
+.comment-button {
+	width: auto;
+	height: 29px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.comment-button div {
+	width: 131px;
+	height: 29px;
+	float: left;
+	/* line-height:45px;
+	text-align: center; */
+}
+
+.AddComment {
+	border: 1px solid black;
+	width: 800px;
+	height: 242px;
+}
+
+.AddComment-title {
+	width: 261px;
+	height: 238px;
+	float: left;
+	line-height: 238px;
+	text-align: center;
+}
+
+.AddComment-main {
+	border: 1px solid black;
+	width: 534px;
+	height: 238px;
+	float: left;
+	/* line-height: 238px;
+	text-align: center; */
+}
+
+textarea {
+	width: 530px;
+	height: 234px;
+	/*禁止调整大小  */
+	resize: none;
+}
+
+.button {
+	width: 800px;
+	height: 50px;
+}
+
+.button-comment {
+	width: 100px;
+	height: 50px;
+	float: left;
+	margin-left: 264px;
+	text-align: center;
+}
+
+.button-return {
+	width: 100px;
+	height: 50px;
+	float: left;
+	margin-left: 54px;
+	text-align: center;
+}
+
+button{
+	width:90px;
+	height: 35px;
+	margin-top: 10px;
+}
+
+
+

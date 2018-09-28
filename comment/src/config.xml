@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 引入外部的properties文件 -->
+	<properties resource="db.properties"/>
+	
+	
+	<settings>
+		<!-- 引入日志功能 -->
+		<setting name="logImpl" value="LOG4J"></setting>
+		<!-- 启动懒加载 -->
+		<setting name="lazyLoadingEnabled" value="true"></setting>
+		<!-- 积极加载设置为消极加载 -->
+		<setting name="aggressiveLazyLoading" value="false"></setting>
+		
+		<!-- 开启二级缓存 -->
+		<setting name="cacheEnabled" value="true"></setting>
+	</settings>
+	
+	<!-- 设置类型别名 -->
+	<typeAliases>
+		 <!-- <typeAlias alias="user" type="com.project.bean.UserBean"/> -->
+		<package name="com.woniuxy.comment.bean" />
+		 
+	</typeAliases>
+	
+	<!-- 配置数据库环境 -->
+  <environments default="development">
+    <environment id="development">
+    	<!-- 事务管理器  默认jdbc的事务管理器-->
+      <transactionManager type="JDBC"/>
+      
+      <!-- 数据源：连接数据库的配置信息，POOLED默认使用mybaits的连接池 -->
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+    
+    <environment id="oracle">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <!-- 引入sql映射文件 -->
+  <mappers>
+    <mapper resource="com/woniuxy/comment/bean/LoginMapper.xml" /> 
+	<mapper resource="com/woniuxy/comment/bean/CommentMapper.xml"/>
+	<mapper resource="com/woniuxy/comment/bean/GoodsMapper.xml"/>
+		
+  </mappers>
+</configuration>
